@@ -16,3 +16,5 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           LOG: "TRACE"  # or "DEBUG"
+          MERGE_LABELS: release
+          MERGE_METHOD: squash
