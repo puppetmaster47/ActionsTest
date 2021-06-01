@@ -1,8 +1,5 @@
 name: Create Release PR
-on:
-  workflow_run:
-    workflows:
-      - test
+on: workflow_dispatch
 jobs:
   release:
     runs-on: ubuntu-latest
