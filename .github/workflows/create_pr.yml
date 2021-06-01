@@ -1,5 +1,5 @@
-on: workflow_run
 name: Create Release PR
+on: workflow_run
 jobs:
   release:
     runs-on: ubuntu-latest
