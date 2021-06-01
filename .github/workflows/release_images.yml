@@ -6,8 +6,8 @@ on:
 jobs:
   release-test:
     runs-on: ubuntu-latest
-    if: startsWith(${{ github.event.pull_request.title }}, 'Release:') && github.event.review.state == 'approved'
+    if: startsWith(github.event.pull_request.title, 'Release:') && github.event.review.state == 'approved'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      - run: echo "Hello World"
+      - run: echo ${{ github.event.pull_request.title }}
