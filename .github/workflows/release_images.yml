@@ -1,0 +1,13 @@
+name: Release Images
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  release-test:
+    runs-on: ubuntu-latest
+    if: startsWith(${{ github.event.pull_request.title }}, 'Release:') && github.event.review.state == 'approved'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - run: echo "Hello World"
