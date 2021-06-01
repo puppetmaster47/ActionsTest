@@ -1,4 +1,4 @@
-on: workflow_action
+on: workflow_run
 name: Create Release PR
 jobs:
   release:
