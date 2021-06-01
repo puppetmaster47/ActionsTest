@@ -10,4 +10,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
-      - run: echo ${{ github.event.pull_request.title }}
+      - run: cat release.json
+      - name: automerge
+        uses: pascalgn/automerge-action@v0.14.2
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          LOG: "TRACE"  # or "DEBUG"
+          MERGE_LABELS: release
+          MERGE_METHOD: squash
