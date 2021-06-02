@@ -26,5 +26,5 @@ jobs:
         COMMIT_MESSAGE: 'Release Operator v${{ steps.release_version.outputs.OUTPUT }}'
         COMMIT_NAME: 'GitHub Actions'
         COMMIT_EMAIL: 'support@mongodb.com'
-        PR_BRANCH_NAME: 'release-${PR_ID}'
+        PR_BRANCH_NAME: 'release-v${{steps.release_version.outputs.OUTPUT}}'
         PR_TITLE: 'Release MongoDB Kubernetes Operator v${{ steps.release_version.outputs.OUTPUT }}'
