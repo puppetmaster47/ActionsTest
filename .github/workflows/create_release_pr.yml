@@ -13,7 +13,7 @@ jobs:
     - name: Determine Release Version
       id: release_version
       run: |
-        OUTPUT=$(jq -r '."mongodb-kubernetes-operator"' < ${{ env.GITHUB_WORKSPACE }}/release.json) &&
+        OUTPUT=$(jq -r '."mongodb-kubernetes-operator"' < $GITHUB_WORKSPACE/release.json) &&
         echo "::set-output name=OUTPUT::$OUTPUT"
     - uses: actions/setup-python@v2
       with:
