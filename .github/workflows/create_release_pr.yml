@@ -24,8 +24,7 @@ jobs:
       uses: technote-space/create-pr-action@v2
       with:
         EXECUTE_COMMANDS: |
-          pwd
-          python ${GITHUB_WORKSPACE}/scripts/ci/update_release.py
+          python ./scripts/ci/update_release.py
         COMMIT_MESSAGE: 'Release Operator v${{ steps.release_version.outputs.OUTPUT }}'
         COMMIT_NAME: 'GitHub Actions'
         COMMIT_EMAIL: 'support@mongodb.com'
