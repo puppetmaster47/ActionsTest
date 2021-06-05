@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: ""
-
+          MERGE_DELETE_BRANCH: true
           MERGE_METHOD: squash
 
   draft-github-release:

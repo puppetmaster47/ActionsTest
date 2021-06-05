@@ -13,6 +13,8 @@ jobs:
       run: |
         OUTPUT=$(jq -r '."mongodb-kubernetes-operator"' < $GITHUB_WORKSPACE/release.json)
         echo "::set-output name=OUTPUT::$OUTPUT"
+        DATE=$(date '+%Y-%m-%d-%H:%M:%S')
+        echo "::set-output name=DATE::$DATE"
     - uses: actions/setup-python@v2
       with:
         python-version: '3.6'
@@ -26,5 +28,5 @@ jobs:
         COMMIT_MESSAGE: 'Release Operator v${{ steps.release_version.outputs.OUTPUT }}'
         COMMIT_NAME: 'GitHub Actions'
         COMMIT_EMAIL: 'support@mongodb.com'
-        PR_BRANCH_NAME: 'release-v${{steps.release_version.outputs.OUTPUT}}-${PR_ID}'
+        PR_BRANCH_NAME: 'release-v${{steps.release_version.outputs.OUTPUT}}-${{ steps.release_version.outputs.DATE }}'
         PR_TITLE: 'Release MongoDB Kubernetes Operator v${{ steps.release_version.outputs.OUTPUT }}'
