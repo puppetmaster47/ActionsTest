@@ -13,7 +13,7 @@ jobs:
       run: |
         OUTPUT=$(jq -r '."mongodb-kubernetes-operator"' < $GITHUB_WORKSPACE/release.json)
         echo "::set-output name=OUTPUT::$OUTPUT"
-        DATE=$(date '+%Y-%m-%d-%H:%M:%S')
+        DATE=$(date '+%Y-%m-%d-%H-%M-%S')
         echo "::set-output name=DATE::$DATE"
     - uses: actions/setup-python@v2
       with:
