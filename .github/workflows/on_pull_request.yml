@@ -1,8 +1,12 @@
-name: Create Release PR
+name: E2E Tests
 on:
   pull_request_target:
     types: [opened, labeled]
+    branches:
+      - master
   push:
+    branches:
+      - master
   workflow_dispatch:
 
 jobs:
