@@ -1,15 +1,15 @@
 name: E2E Tests
 on:
-  pull_request_target:
-    types: [labeled]
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-  push:
-    branches:
-      - master
+  - pull_request_target:
+     types: [labeled]
+     branches:
+     - master
+  - pull_request:
+     branches:
+     - master
+  - push:
+     branches:
+    - master
   workflow_dispatch:
 
 jobs:
