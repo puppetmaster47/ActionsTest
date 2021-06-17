@@ -10,6 +10,7 @@ RELATIVE_PATH_TO_OPENSHIFT_MANAGER_YAML = "deploy/openshift/operator_openshift.y
 
 
 def _load_yaml_file(path: str) -> Dict:
+    
     with open(path, "r") as f:
         return yaml.safe_load(f.read())
 
