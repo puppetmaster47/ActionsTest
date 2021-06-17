@@ -1,7 +1,7 @@
 name: E2E Tests
 on:
   pull_request_target:
-    types: [labeled, opened]
+    types: [labeled]
     branches:
       - master
   pull_request:
