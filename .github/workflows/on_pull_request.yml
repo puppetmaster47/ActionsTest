@@ -16,10 +16,6 @@ jobs:
     if: github.event.pull_request.head.repo.full_name == 'chatton/ActionsTest' || contains(github.event.pull_request.labels.*.name, 'safe-to-test')
     runs-on: ubuntu-latest
     steps:
-    - name: Skip Duplicate Actions
-      uses: fkirc/skip-duplicate-actions@v3.4.0
-      with:
-        concurrent_skipping: "always"
     - name: Hello World
       run: echo "Hello World!"
     - name: My Secret
