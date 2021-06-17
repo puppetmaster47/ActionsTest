@@ -2,6 +2,7 @@ name: Create Release PR
 on:
   pull_request_target:
     types: [opened, labeled]
+  push:
   workflow_dispatch:
 
 jobs:
