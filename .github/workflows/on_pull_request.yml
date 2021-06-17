@@ -1,0 +1,9 @@
+name: Create Release PR
+on: pull_request
+
+jobs:
+  On Pull Request:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hello World
+      run: echo "Hello World!"
