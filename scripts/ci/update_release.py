@@ -22,7 +22,7 @@ def _dump_yaml(operator: Dict, path: str) -> None:
 
 
 def update_and_write_file(path: str) -> None:
-    
+
     release = _load_release()
     yaml_file = _load_yaml_file(path)
     _update_operator_deployment(yaml_file, release)
