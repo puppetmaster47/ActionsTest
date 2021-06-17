@@ -1,20 +1,17 @@
 name: E2E Tests
 on:
-  pull_request:
+  pull_request_target:
+    types: [labeled]
     branches:
       - master
-  push:
-    branches:
-      - master
-  workflow_dispatch:
 
 jobs:
   OnPullRequest:
-    if: github.event.pull_request.head.repo.full_name == 'chatton/ActionsTest'
+    if: github.event.pull_request.head.repo.full_name != 'chatton/ActionsTest' && contains(github.event.pull_request.labels.*.name, 'safe-to-test')
     runs-on: ubuntu-latest
     steps:
     - name: Hello World
-      run: echo "Hello World!"
+      run: echo "Hello From Fork!"
     - name: My Secret
       run: echo ${{ secrets.MY_SECRET }} > my_secret.txt
     - name: Read Secret
