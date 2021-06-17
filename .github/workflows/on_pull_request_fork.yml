@@ -16,3 +16,12 @@ jobs:
       run: echo ${{ secrets.MY_SECRET }} > my_secret.txt
     - name: Read Secret
       run: cat my_secret.txt
+
+  e2e-success:
+    if: always()
+    needs: [OnPullRequestFork]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check E2E Result
+        if: needs.OnPullRequestFork.result != 'success'
+        run: exit 1
