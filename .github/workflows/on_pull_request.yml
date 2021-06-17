@@ -18,6 +18,8 @@ jobs:
     steps:
     - name: Skip Duplicate Actions
       uses: fkirc/skip-duplicate-actions@v3.4.0
+      with:
+        concurrent_skipping: "always"
     - name: Hello World
       run: echo "Hello World!"
     - name: My Secret
