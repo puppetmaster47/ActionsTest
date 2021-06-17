@@ -1,12 +1,14 @@
 name: E2E Tests
-on:
-  - pull_request_target:
-     types: [labeled]
-     branches: [master]
-  - pull_request:
-      branches: [master]
-  - push:
-      branches: [master]
+#on:
+#  - pull_request_target:
+#     types: [labeled]
+#     branches: [master]
+#  - pull_request:
+#      branches: [master]
+#  - push:
+#      branches: [master]
+
+on: [pull_request_target, pull_request, push]
 
 jobs:
   OnPullRequest:
