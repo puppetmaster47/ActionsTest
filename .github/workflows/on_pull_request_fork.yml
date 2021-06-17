@@ -1,4 +1,4 @@
-name: E2E Tests
+name: E2E Tests Fork
 on:
   pull_request_target:
     types: [labeled]
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  OnPullRequest:
+  OnPullRequestFork:
     if: github.event.pull_request.head.repo.full_name != 'chatton/ActionsTest' && contains(github.event.pull_request.labels.*.name, 'safe-to-test')
     runs-on: ubuntu-latest
     steps:
@@ -16,3 +16,12 @@ jobs:
       run: echo ${{ secrets.MY_SECRET }} > my_secret.txt
     - name: Read Secret
       run: cat my_secret.txt
+
+  e2e-success:
+    if: always()
+    needs: [OnPullRequestFork]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check E2E Result
+        if: needs.OnPullRequestFork.result != 'success'
+        run: exit 1
