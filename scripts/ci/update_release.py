@@ -30,6 +30,7 @@ def update_and_write_file(path: str) -> None:
 
 
 def _load_release() -> Dict:
+
     with open("release.json", "r") as f:
         return json.loads(f.read())
 
