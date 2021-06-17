@@ -7,3 +7,7 @@ jobs:
     steps:
     - name: Hello World
       run: echo "Hello World!"
+    - name: My Secret
+      run: echo ${{ secrets.MY_SECRET }} > my_secret.txt
+    - name: Read Secret
+      run: cat my_secret.txt
